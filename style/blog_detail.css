@@ -1,0 +1,286 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    /*width: 1920px;*/
+    background-color: #FBFBFB;
+    line-height: 1.5;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 500;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.header {
+    padding: 24px 80px;
+}
+
+.header-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0px 40px;
+}
+
+.header .nav {
+    font-size: 28px;
+}
+
+.preface {
+    border-bottom: 1px solid #6C757D;
+}
+
+.teasor {
+    display: flex;
+    column-gap: 24px;
+}
+
+.teasor img {
+    width: 50%;
+    height: 640px;
+}
+
+.teasor .article-info {
+    margin: auto 0px;
+    width: 636px;
+}
+
+.date {
+    padding-bottom: 4px;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.tags .hashtag {
+    color: #0027D5;
+    font-size: 24px;
+}
+
+.latest {
+    background-color: #0027D5;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 40px;
+    padding: 6px 12px;
+    margin-left: 8px;
+}
+
+@media (max-width: 767px) {
+    .teasor {
+        flex-wrap: wrap;
+    }
+    .teasor img {
+        width: 100%;
+        height: 375px;
+    }
+
+    .teasor .article-info {
+        max-width: 351px;
+        margin-top: 48px;
+        margin: 48px calc((100vw - 351px) / 2);
+    }
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    padding-bottom: 8px;
+}
+
+.content {
+    width: 636px;
+    margin: 80px auto;
+}
+
+.content-preface h2 {
+    padding-bottom: 24px;
+}
+
+.content h2 {
+    color: #0027D5;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.content h3 {
+    font-style: 20px;
+    font-weight: 700;
+    padding-top: 24px;
+    padding-bottom: 12px;
+}
+
+.content a {
+    color: #0027D5;
+}
+
+.extension h2 {
+    padding-bottom: 24px;
+}
+
+.extension a {
+    color: #000;
+}
+
+.contact-methods {
+    text-decoration: underline;
+}
+
+.tip, .block-summary {
+    background-color: #EDEDED;
+    border-radius: 24px;
+    padding: 24px;
+    margin-top: 24px;
+    font-weight: 700;
+}
+
+.thank {
+    margin-top: 24px;
+    margin-bottom: 48px;
+}
+
+.basic .important {
+    padding-bottom: 8px;
+}
+
+.recommandation {
+    list-style-type: decimal;
+    margin-left: 1.5em;
+    padding-left: 0px;
+}
+
+.content ul {
+  list-style: disc;
+  padding-left: 40px;
+}
+
+.content img {
+    margin: 48px auto 24px auto;
+}
+
+.summary h2 {
+    padding-bottom: 24px;
+}
+
+@media (max-width: 767px) {
+    .content {
+        max-width: 351px;
+        margin: 64px auto;
+    }
+}
+
+.pagination {
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.paging {
+    border-radius: 40px;
+    border: 1px solid black;
+    padding: 8px 16px;
+}
+
+.paging a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #4B4B4B;
+}
+
+.paging svg {
+    display: block;
+}
+
+.footer {
+    text-align: center;
+    border-top: 1px solid #6C757D;
+}
+
+.footer .contact {
+    display: flex;
+    justify-content: space-around;
+    padding: 80px;
+}
+
+.footer .contact .email {
+    font-size: 32px;
+}
+
+.footer .contact .icons {
+    display: flex;
+    align-items: center;
+}
+
+.footer .copyright {
+    padding: 24px;
+}
+
+@media (max-width: 767px) {
+    .footer .contact {
+        display: none;
+    }
+}
