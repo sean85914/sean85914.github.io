@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="geometric" href="Representation.html" /> 
+    <link rel="prev" title="Representation" href="Representation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,8 +45,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="Representation.html">geometric</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Representation.html#representation">Representation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Representation.html">Representation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#vectors-and-points">Vectors and Points</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#geometric.norm"><code class="docutils literal notranslate"><span class="pre">norm()</span></code></a></li>
@@ -57,6 +56,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#geometric.distance_between_points"><code class="docutils literal notranslate"><span class="pre">distance_between_points()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#geometric.angle_between_vectors"><code class="docutils literal notranslate"><span class="pre">angle_between_vectors()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#geometric.orthogonal_vector"><code class="docutils literal notranslate"><span class="pre">orthogonal_vector()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geometric.vector_rotation"><code class="docutils literal notranslate"><span class="pre">vector_rotation()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#lines">Lines</a><ul>
@@ -105,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#circle">Circle</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#geometric.circle_from_three_points"><code class="docutils literal notranslate"><span class="pre">circle_from_three_points()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#geometric.circle_from_center_and_points"><code class="docutils literal notranslate"><span class="pre">circle_from_center_and_points()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geometric.circle_from_center_and_radius"><code class="docutils literal notranslate"><span class="pre">circle_from_center_and_radius()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#geometric.generate_points_on_circle"><code class="docutils literal notranslate"><span class="pre">generate_points_on_circle()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#geometric.circle_coordinate_transform"><code class="docutils literal notranslate"><span class="pre">circle_coordinate_transform()</span></code></a></li>
 </ul>
@@ -147,6 +148,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#geometric.Pose.translation"><code class="docutils literal notranslate"><span class="pre">Pose.translation</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#geometric.Pose.rotation"><code class="docutils literal notranslate"><span class="pre">Pose.rotation</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#geometric.Pose.inv"><code class="docutils literal notranslate"><span class="pre">Pose.inv</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#geometric.Pose.chain"><code class="docutils literal notranslate"><span class="pre">Pose.chain()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#geometric.Pose.diff"><code class="docutils literal notranslate"><span class="pre">Pose.diff()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#geometric.Pose.distance"><code class="docutils literal notranslate"><span class="pre">Pose.distance()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#geometric.Pose.from_matrix"><code class="docutils literal notranslate"><span class="pre">Pose.from_matrix()</span></code></a></li>
@@ -393,6 +395,29 @@
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="geometric.vector_rotation">
+<span class="sig-prename descclassname"><span class="pre">geometric.</span></span><span class="sig-name descname"><span class="pre">vector_rotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geometric.vector_rotation" title="Link to this definition"></a></dt>
+<dd><p>Rotate vector in 2D counter-clockwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v</strong> (<em>list</em><em> or </em><em>array-like</em>) – Vector in 2D.</p></li>
+<li><p><strong>theta</strong> (<em>float</em>) – Angle to rotate, with unit radian</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Rotated vector</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.array</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – If input vector is not in 2D</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="lines">
 <h2>Lines<a class="headerlink" href="#lines" title="Link to this heading"></a></h2>
@@ -587,7 +612,7 @@ and <code class="docutils literal notranslate"><span class="pre">[vx,</span> <sp
 <dd><p>Generate a random point on a plane in 3D space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>plane</strong> (<em>list</em><em> or </em><em>array-like</em>) – the coefficients of the plane equation in the form <span class="math notranslate nohighlight">\(ax + by + cz + d = 0\)</span></p>
+<dd class="field-odd"><p><strong>plane</strong> (<em>list</em><em> or </em><em>array-like</em>) – The coefficients of the plane equation in the form <span class="math notranslate nohighlight">\(ax + by + cz + d = 0\)</span></p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Coordinates of a random point on the plane</p>
@@ -961,15 +986,15 @@ where the plane equation is <span class="math notranslate nohighlight">\(ax + by
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<em>list</em><em> or </em><em>array-like</em>) – Coordinates of the point</p></li>
+<li><p><strong>p</strong> (<em>list</em><em> or </em><em>array-like</em>) – A single point <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> or multiple points <code class="docutils literal notranslate"><span class="pre">[[x1,</span> <span class="pre">y1],</span> <span class="pre">[x2,</span> <span class="pre">y2],</span> <span class="pre">...]</span></code>.</p></li>
 <li><p><strong>line</strong> (<em>list</em><em> or </em><em>array-like</em>) – Coefficients of the line equation ax + by + c = 0</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The distance from the point to the line.</p>
+<dd class="field-even"><p>Distance (if input is a single point) or an array of distances (if multiple points).</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p>float or np.ndarray</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>AssertionError</strong> – If the dimensions of the point and line do not match the expected dimensions.</p>
@@ -988,16 +1013,16 @@ where the plane equation is <span class="math notranslate nohighlight">\(ax + by
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<em>list</em><em> or </em><em>array-like</em>) – Coordinates of the point <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code>.</p></li>
+<li><p><strong>p</strong> (<em>list</em><em> or </em><em>array-like</em>) – A single point <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code> or multiple points <code class="docutils literal notranslate"><span class="pre">[[x1,</span> <span class="pre">y1,</span> <span class="pre">z1],</span> <span class="pre">[x2,</span> <span class="pre">y2,</span> <span class="pre">z2],</span> <span class="pre">...]</span></code>.</p></li>
 <li><p><strong>plane</strong> (<em>list</em><em> or </em><em>array-like</em>) – Representation of the plane as <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">b,</span> <span class="pre">c,</span> <span class="pre">d]</span></code>
 where the plane equation is <span class="math notranslate nohighlight">\(ax + by + cz + d = 0\)</span></p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The distance from the point to the plane.</p>
+<dd class="field-even"><p>Distance (if input is a single point) or an array of distances (if multiple points).</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p>float or np.ndarray</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>AssertionError</strong> – If the dimensions of the point and plane do not match the expected dimensions</p>
@@ -1270,9 +1295,47 @@ For 2D, this term is neglectable and XY plane (<span class="math notranslate noh
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionError</strong> – If the vector from <cite>center</cite> to <cite>p1</cite> is colinear with the vector from <cite>center</cite> to <cite>p2</cite></p></li>
 <li><p><strong>AssertionError</strong> – If the points do not lie in the same dimension</p></li>
 <li><p><strong>AssertionError</strong> – If the dimension of the point is not 2 nor 3</p></li>
 <li><p><strong>AssertionError</strong> – If the distances from the center to p1 and p2 are not equal within a tolerance.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="geometric.circle_from_center_and_radius">
+<span class="sig-prename descclassname"><span class="pre">geometric.</span></span><span class="sig-name descname"><span class="pre">circle_from_center_and_radius</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane_normal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.0,</span> <span class="pre">0.0,</span> <span class="pre">1.0]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geometric.circle_from_center_and_radius" title="Link to this definition"></a></dt>
+<dd><p>Construct a 2D or 3D circle representation from a center and radius.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>center</strong> (<em>list</em><em> or </em><em>array-like</em>) – The circle center as a 2D (length-2) or 3D (length-3) point.</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – The radius of the circle. Must be positive.</p></li>
+<li><p><strong>plane_normal</strong> (<em>list</em><em> or </em><em>array-like</em><em>, </em><em>optional</em>) – A 3D normal vector defining the plane
+in which the circle lies. Required only for 3D cases. Defaults to <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">0.0,</span> <span class="pre">1.0]</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>A tuple containing</p>
+<ul class="simple">
+<li><p>numpy.ndarray: Coordinates of the circle’s center</p></li>
+<li><p>float: Radius of the circle</p></li>
+<li><p>list:
+Plane coefficient <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">b,</span> <span class="pre">c,</span> <span class="pre">d]</span></code> which the circle lies on.
+For 2D, this term is neglectable and XY plane (<span class="math notranslate nohighlight">\(Z=0\)</span>) is returned</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionError</strong> – If <cite>radius</cite> is non-positive.</p></li>
+<li><p><strong>AssertionError</strong> – If <cite>center</cite> length is neither 2 nor 3</p></li>
+<li><p><strong>AssertionError</strong> – If <cite>plane_normal</cite> is invalid in 3D case.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1969,7 +2032,7 @@ PointCircleEnum: Enumeration as following:</p>
 <dd><p>The rotation represented as a rotation vector.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>nump.ndarray</p>
+<dd class="field-odd"><p>numpy.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1981,6 +2044,26 @@ PointCircleEnum: Enumeration as following:</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="#geometric.Pose" title="geometric.Pose">Pose</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="geometric.Pose.chain">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">poses</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#geometric.Pose.chain" title="Link to this definition"></a></dt>
+<dd><p>Chains multiple Pose instances via left-to-right multiplication.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>*poses</strong> (<a class="reference internal" href="#geometric.Pose" title="geometric.Pose"><em>Pose</em></a>) – Any number of Pose instances.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The resulting Pose from multiplying all inputs.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#geometric.Pose" title="geometric.Pose">Pose</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>AssertionError</strong> – If any input is not a Pose.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2176,7 +2259,7 @@ message to a Pose.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>target_pose</strong> (<a class="reference internal" href="#geometric.Pose" title="geometric.Pose"><em>Pose</em></a>) – The target pose.</p></li>
-<li><p><strong>num</strong> (<em>int</em>) – Number of interpolation steps.</p></li>
+<li><p><strong>num</strong> (<em>int</em>) – Number of interpolation steps, <strong>including</strong> the start and end poses. Must greater than 2.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -2186,9 +2269,33 @@ message to a Pose.</p>
 <dd class="field-odd"><p>list of <a class="reference internal" href="#geometric.Pose" title="geometric.Pose">Pose</a></p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>AssertionError</strong> – If <cite>target_pose</cite> is not a Pose or num &lt; 3.</p>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>AssertionError</strong> – If <cite>target_pose</cite> is not a Pose.</p></li>
+<li><p><strong>AssertionError</strong> – If <cite>num</cite> less than 3.</p></li>
+</ul>
 </dd>
 </dl>
+<p>The translation is interpolated linearly, while the rotation is interpolated using spherical
+linear interpolation (SLERP).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">geometric</span> <span class="kn">import</span> <span class="n">Pose</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p1</span> <span class="o">=</span> <span class="n">Pose</span><span class="o">.</span><span class="n">identity</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p2</span> <span class="o">=</span> <span class="n">Pose</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">120</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ps</span> <span class="o">=</span> <span class="n">p1</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">translation</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ps</span><span class="p">])</span>
+<span class="go">[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]</span>
+</pre></div>
+</div>
+<p>Visualization with <a class="reference external" href="https://www.open3d.org/docs/release/">Open3d</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">open3d</span> <span class="k">as</span> <span class="nn">o3d</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">geoms</span> <span class="o">=</span> <span class="p">[</span><span class="n">o3d</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">TriangleMesh</span><span class="o">.</span><span class="n">create_coordinate_frame</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">matrix</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ps</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">o3d</span><span class="o">.</span><span class="n">visualization</span><span class="o">.</span><span class="n">draw_geometries</span><span class="p">(</span><span class="n">geoms</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Result</p>
+<figure class="align-center">
+<img alt="_images/interpolate.png" src="_images/interpolate.png" />
+</figure>
 </dd></dl>
 
 <dl class="py method">
@@ -2365,7 +2472,7 @@ message to a Pose.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Representation.html" class="btn btn-neutral float-left" title="geometric" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Representation.html" class="btn btn-neutral float-left" title="Representation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
